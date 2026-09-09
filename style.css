@@ -3,6 +3,9 @@ body{
     overflow: hidden;
     font-family: 'Inter', sans-serif;
 }
+*{
+    box-sizing: border-box;
+}
 .display{
     width: 100%;
     height: 180px;
@@ -25,30 +28,37 @@ p{
     font-size: 28px;
 }
 .operators{
-    min-height: 100vh;
+    /*min-height: 100vh;*/
 }
 button{
-    /*padding: 5px;*/
     text-align: center;
     border-radius: 50%;
-    width: 72px;
-    height: 72px;
+    width: 78px;
+    height: 78px;
     border: none;
     gap: 20px;
     font-size: 30px;
     font-weight: 500;
 }
+.firstbtn{
+    display:flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
 .firstbtn button{
     background-color: #E8D20F;
     color: #111111;
 }
+
+
 .btnkeys{
     display: flex;
     margin-top: 10px;
+    gap: 10px;
 }
 .numbers{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
 .numbers button{
@@ -60,19 +70,37 @@ button{
     flex-direction: column;
     gap: 10px;
 }
-
 .signs button{
     background-color: #E8D20F;
     color: #111111;
 }
 
-.firstbtn{
-    display:flex;
-    justify-content: flex-end;
-    gap: 35px;
-}
+
+
+
 @media(min-width: 670px){
-    main{
-        max-width: 400px;
+    body{
+        background-color: #060a46;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
     }
+    main{
+        max-width: 700px;
+        width: auto;
+        background-color: #EDECDD;
+        height: auto;
+        padding: 25px;
+        border-radius: 10px;
+    }
+    button{
+    /*padding: 5px;*/
+    text-align: center;
+    border-radius: 50%;
+    width: 141px;
+    height: 141px;
+}
 }
