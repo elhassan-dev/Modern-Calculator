@@ -12,10 +12,14 @@ numbers.forEach((number) => {
     number.addEventListener("click",()=> {
     if (!number.value) 
     return;
+    if (inpu === "" && ["+", "-", "*", "/"].includes(number.value)){
+    return;
+};
         inpu += number.value;
         input.textContent= inpu
     .replaceAll("*", "×")
     .replaceAll("/", "÷");;
+    shrinkInput();
         
         });
 });
@@ -30,9 +34,21 @@ const realInput= eval(inpu);
 delet.addEventListener("click", ()=>{
     inpu = inpu.slice(0, -1);
     input.textContent = inpu || "0";
+    shrinkInput();
 });
 clear.addEventListener("click", ()=>{
     inpu ="";
     input.textContent = "0";
     answer.textContent = "0";
+    shrinkInput();
 });
+
+function shrinkInput(){
+    let size = 44;
+    input.style.fontSize = size +"px";
+    while(input.scrollWidth > input.clientWidth && size > 15){
+    size--;
+    input.style.fontSize= size + "px";
+    };
+};
+

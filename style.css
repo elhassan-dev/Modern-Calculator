@@ -92,7 +92,7 @@ button{
         max-width: 700px;
         width: auto;
         background-color: #EDECDD;
-        height: auto;
+        height: 100%;
         padding: 25px;
         border-radius: 10px;
     }
