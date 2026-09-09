@@ -36,6 +36,3 @@ clear.addEventListener("click", ()=>{
     input.textContent = "0";
     answer.textContent = "0";
 });
-
-
-|
