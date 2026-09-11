@@ -1,10 +1,19 @@
-const numbers= document.querySelectorAll('button');
+const numbers= document.querySelectorAll('.numb');
 const input= document.getElementById('input');
 const answer= document.getElementById('answer');
 const prod= document.getElementById('prod');
 const delet= document.getElementById('delete');
 const clear= document.getElementById('clear');
+const toggle= document.getElementById('toggle');
+const toggle2 = document.getElementById('toggle2');
 
+
+toggle.addEventListener("click", ()=>{
+    document.querySelector('body').classList.add("darkmode");
+});
+toggle2.addEventListener("click", ()=>{
+    document.querySelector('body').classList.remove("darkmode");
+});
 
 let inpu= "";
 
@@ -18,7 +27,8 @@ numbers.forEach((number) => {
         inpu += number.value;
         input.textContent= inpu
     .replaceAll("*", "×")
-    .replaceAll("/", "÷");;
+    .replaceAll("/", "÷")
+    .replaceAll("/100", "%");;
     shrinkInput();
         
         });
@@ -51,4 +61,6 @@ function shrinkInput(){
     input.style.fontSize= size + "px";
     };
 };
+
+
 
