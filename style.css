@@ -55,7 +55,7 @@ main{
     height: 180px;
     border: 1.5px solid #111111;
     border-radius: 7px;
-    margin: 20px 0 20px 0;
+    margin: 20px 0 10px 0;
     overflow: hidden;
 }
 .darkmode .display{
@@ -75,46 +75,56 @@ h1{
 p{
     font-size: 28px;
 }
+
 button{
     text-align: center;
     border-radius: 50%;
-    width: 78px;
-    height: 78px;
+    width: 95%;
+    aspect-ratio: 1;
+    height: auto;
     border: none;
     gap: 20px;
     font-size: 30px;
     font-weight: 500;
 }
 .firstbtn{
-    display:flex;
-    justify-content: flex-end;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+    margin-bottom: 10px;
 }
-.firstbtn button{
+
+.firstbtn button:first-child{
+    grid-column: 3;
     background-color: #E8D20F;
-    color: #111111;
 }
 
-
+.firstbtn button:last-child{
+    grid-column: 4;
+    background-color: #E8D20F;
+}
 .btnkeys{
-    display: flex;
-    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
     gap: 10px;
 }
+
 .numbers{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.signs{
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
     gap: 10px;
 }
 .numbers button{
     background-color: #D0CEBE;
     color: #111111;
 }
-.signs{
-    display:flex;
-    flex-direction: column;
-    gap: 10px;
-}
+
 .signs button{
     background-color: #E8D20F;
     color: #111111;
@@ -136,7 +146,6 @@ button{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        /*min-height: 100vh;*/
         overflow: hidden;
     }
     body.darkmode{
@@ -155,12 +164,12 @@ button{
         height: 100%;
         padding: 25px;
         border-radius: 10px;
+        max-height: 100vh;
     }
     main .darkmode{
-        background-color: white;
+        background-color: black;
     }
     button{
-    /*padding: 5px;*/
     text-align: center;
     border-radius: 50%;
     width: 141px;
